@@ -20,3 +20,5 @@ public:
         return true;
     }
 };
+
+// a better approach would be using switch case on char c
