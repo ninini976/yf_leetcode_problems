@@ -11,14 +11,12 @@ class Solution(object):
         """
         left = 1
         right = n
-        while True:
+        while left < right: # the terminate condition for this while statement can only be left == right.
             mid = left + (right - left)/2
-            if mid == left:
-                if isBadVersion(mid):
-                    return mid
-                else:
-                    return mid+1
             if not isBadVersion(mid):
-                left = mid
+                left = mid+1 # this garantee left will increase at least one if mid is good
             else:
-                right = mid
+                right = mid # this will make sure that right is always point to a bad version
+        return left
+    
+   
